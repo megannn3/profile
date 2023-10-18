@@ -1,12 +1,16 @@
 // PROBLEM ONE
 // Given an object of the stolen items for a household, return the total amount of items stolen (number). If nothing was robbed, return the string "Lucky you!”.
-
+import { stolenItems } from "./data.js";
 function houseTotal(obj) {
   let a = obj.socks+ obj.spoons + obj.nutella_jar + obj.keys + obj.shoelaces + obj.rotisserie_chicken
 
-    return a
+    if(a>0){
+      return a
     
-    }
+    }else {
+      a ="Lucky you!"
+      return a
+    }}
    // uncomment these out to test it out
     console.log(houseTotal(stolenItems[0])); 
     console.log(houseTotal(stolenItems[1]));
@@ -34,14 +38,19 @@ function houseTotal(obj) {
     // Given an array of objects representing an entire neighborhood, return the most frequently stolen item. This is NOT the item that has been stolen from the most households, this is the item that has been stolen the most times TOTAL. 
     
     function neighborhoodTotal(arr) {
-    
-    
-      return total; 
+     let totals = [0,0,0,0,0,0]
+     let things = ['socks',"spoons","nutella_jar", "keys", "shoelaces", "rotisserie_chicken"]
+     for(let i=0; i< arr.length; i++){
+      for(let j=0;j<totals.length;i++){
+        totals[j]+= arr[i][things[j]]
+      }
+     }
+      return totals; 
       
     }
     
     // uncomment these out to test it out
-    //console.log(houseTotal(stolenItems)); 
+   console.log(neighborhoodTotal(stolenItems)); 
     
     
     
