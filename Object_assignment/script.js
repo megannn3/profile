@@ -39,13 +39,16 @@ function houseTotal(obj) {
     
     function neighborhoodTotal(arr) {
      let totals = [0,0,0,0,0,0]
-     let things = ['socks',"spoons","nutella_jar", "keys", "shoelaces", "rotisserie_chicken"]
+     let things
      for(let i=0; i< arr.length; i++){
-      for(let j=0;j<totals.length;i++){
+      for(let j=0;j<totals.length;j++){
+        things = Object.keys(arr[i])
         totals[j]+= arr[i][things[j]]
       }
      }
-      return totals; 
+     let max= totals.indexOf(Math.max.apply(null, totals))
+
+      return things[max]; 
       
     }
     
@@ -56,6 +59,6 @@ function houseTotal(obj) {
     
     // PROBLEM FOUR
     // Based on the item that has been stolen the most, who do you think the burglar is? (you won’t get marked down for getting the “wrong” answer - just give me a fun explanation for why you think it is who it is! 
-    
+    //The burglars must be the foxes, because they are the only animals strange enough to wear clothes. None of the other animals have been seen with any human clothing but the foxes.
     
     
