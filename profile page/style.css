@@ -125,7 +125,7 @@ END Glitch hello-app default styles
 ******************************************************************************/
 
 body {
-  font-family: HK Grotesk;
+  font-family: other;
   font-size: 20px;
   background-color: var(--color-bg);
   
@@ -168,7 +168,8 @@ body {
 .lists {
   flex : 50%;
   display: flex;
-  color: #2B50AA
+  color: #2B50AA;
+  font-family: other;
     
 }
 .photos {
@@ -210,6 +211,10 @@ h2 {
   color: #00AFB9;
   font-family: other;
 }
+.comments {
+  color: #00AFB9;
+  font-family: other;
+}
 
 .contact{
   padding: 50px;
@@ -222,7 +227,8 @@ h2 {
   transform: translateY(5px);
 }
 p{
-  color: #0A81D1
+  color: #0A81D1;
+  font-family : other;
 }
 
 /* Button dip

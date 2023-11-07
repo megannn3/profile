@@ -18,7 +18,7 @@
     <title>My Profile</title>
 
     <!-- The website stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- The website JavaScript file -->
     <script src="/script.js" defer></script>
@@ -41,7 +41,7 @@
         <div>
          <h2>Bio</h2>
           <p>
-            I'm Megan, a sohpmore at PHS. I'm fifteen, my birthday is April twenty-second. 
+            I'm Megan, a sophomore at PHS. I'm fifteen, my birthday is April twenty-second. 
             I enjoy:
           </p> 
         </div>
@@ -127,31 +127,50 @@ src="https://cdn.glitch.global/9362a7d6-c363-4fb0-9497-27d9ebe854db/IMG_2638.JPG
         </div>
           <!--  🚧 TODO: ADD BUTTON HERE -->
 
-          <!-- Once you've added the button from TODO.md, click it in the page -->
-          <!-- Check out the function in script.js to see how it works -->
-           <!-- <form>
-            <input type="radio">
-            <label for="robot">I am a robot</label><br>
+          
            
-           
-            
-          </form>
-          <form>
-            <label>Why:</label><br>
-             <input type="text">
-          </form>
-          <form>
+          <form action="https://sheetdb.io/api/v1/9s8i8wjf4lv2n" method = "POST" id="sheetdb-form"> 
+            <label>What's your name?</label><br>
+             <input name = "data[name]" type="text"><br>
+             <label>Send a message here!</label><br>
+             <input name = "data[message]" type="text"><br>
+          
+          
             <input type="checkbox">
-            <label>I'm sad about being a robot</label><br>
+            <label>This webpage is cool</label><br>
             <input type="checkbox">
-            <label>I regret my decision to be a robot</label><br>
+            <label>I don't want to send a message</label><br>
             <input type="checkbox">
-            <label>I'm fine, being a robot is cool I suppose...</label><br>
+            <label>I like the pictures</label><br>
+
+            <button type="submit">Submit</button>
           </form>
-     -->
+
+          <script>
+            var form = document.getElementById('sheetdb-form');
+            form.addEventListener("submit", e => {
+              e.preventDefault();
+              fetch(form.action, {
+                  method : "POST",
+                  body: new FormData(document.getElementById("sheetdb-form")),
+              }).then(
+                  response => response.json()
+              ).then((html) => {
+                // you can put any JS code here
+                alert('success')
+              });
+            });
+          </script>
+        <h2>Comments</h2>
+        <div id=comments data-sheetdb-url="https://sheetdb.io/api/v1/9s8i8wjf4lv2n">
+          <p><strong>{{name}}</strong> :
+            <br> {{message}}</p>
       </div>
+      </div>\
+      
     </div>
     <footer> 
       </footer>
   </body>
+  <script src="https://sheetdb.io/handlebars.js"></script>
 </html>
